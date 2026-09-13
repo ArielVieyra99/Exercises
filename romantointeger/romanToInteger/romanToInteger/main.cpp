@@ -19,11 +19,18 @@ int main() {
     for (int l = 0;l < input.size(); l ++){
         switch (input[l]) {
             case 'I':
-                x = x +1;
+                output = output + 1;
                 break;
             case 'X':
-                if()
+                if(input[r] == 'L') {
+                    output = output + 40;
+                    l++; r++;
+                }
+                else {
+                    output = output + 10;
+                }
         }
+        r++; //l and r always once per cycle except if 40 found, there is extra in cases
     }
     
     
