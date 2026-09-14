@@ -18,18 +18,25 @@
 #include <iostream>
 
 int main() {
-    std::string input = "()[]{}";
-    std::unordered_map<char, int> charTally;
+    std::string input = "()[]{}}";
+    int par = 0, sqr = 0, curl = 0;
     bool validparenthesis;
     
     for (const char& ch : input) {
-        charTally[ch]++;
-        if (charTally[ch] % 2 == 0) {
+        if (ch == '(' || ch == ')') {
+            par++;
+        }
+        if (ch == '[' || ch == ']') {
+            sqr++;
+        }
+        if (ch == '{'|| ch == '}') {
+            curl++;
+        }
+        if(par%2 == 0 && sqr%2 ==0 && curl%2 == 0) {
             validparenthesis = true;
         }
-        else {
+        else
             validparenthesis = false;
-        }
     }
     std::cout <<std::boolalpha << validparenthesis <<std::endl;
     
