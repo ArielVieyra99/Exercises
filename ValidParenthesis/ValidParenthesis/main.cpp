@@ -16,27 +16,47 @@
 
 
 #include <iostream>
-
+//(])[
 int main() {
-    std::string input = "()[]{}}";
-    int par = 0, sqr = 0, curl = 0;
-    bool validparenthesis;
+    std::string input = "()[]{";
+    std::stack<char> brackets;
+    bool validparenthesis = true;
     
     for (const char& ch : input) {
-        if (ch == '(' || ch == ')') {
-            par++;
+        std::cout << ch << std::endl;
+        if (ch == '(' || ch == '[' || ch == '{') {
+            brackets.push(ch);
         }
-        if (ch == '[' || ch == ']') {
-            sqr++;
+        if (ch == ')' || ch == ']' || ch == '}') {
+            if (brackets.empty()) {
+                validparenthesis = false;
+                break;
+            }
+            char top = brackets.top();
+            if (top == '(') {
+                if (ch == ')') {
+                    brackets.pop();
+                }
+                else
+                    validparenthesis = false;
+            }
+            if (top == '[') {
+                if (ch == ']') {
+                    brackets.pop();
+                }
+                else
+                    validparenthesis = false;
+            }
+            if (top == '{') {
+                if (ch == '}') {
+                    brackets.pop();
+                }
+                else
+                    validparenthesis = false;
+            }
         }
-        if (ch == '{'|| ch == '}') {
-            curl++;
-        }
-        if(par%2 == 0 && sqr%2 ==0 && curl%2 == 0) {
-            validparenthesis = true;
-        }
-        else
-            validparenthesis = false;
+        
+    
     }
     std::cout <<std::boolalpha << validparenthesis <<std::endl;
     
