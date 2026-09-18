@@ -26,19 +26,35 @@
 
 int main () {
     std::vector <int> nums = {0,1,0,3,12};
-    std::set <int> set;
-    int zero_count = 0;
-    for(int y = 0; y < nums.size(); y++) {
-        if(nums[y] == 0) {
-            zero_count++;
+    std::cout << nums.size() << std::endl;
+    for(int i = 0; i< nums.size(); i++) {
+        std::cout << nums[i];
+        if(i == nums.size()-1) {
+            std::cout << "\n\n";
         }
-        else
-            set.insert(nums[y]);
     }
-    for(int i = 0; i < zero_count; i++) {
-        nums.push_back(0);
+    nums.erase(nums.begin()+0);
+    for(int i = 0; i< nums.size(); i++) {
+        std::cout << nums[i];
+        if(i== nums.size()-1) {
+            std::cout << "\n\n";
+        }
     }
-    for (int j = 0; j < nums.size(); j++) {
-        std::cout << nums[j];
-    }
+    std::cout << nums.size() << std::endl;
+    
+//    std::set <int> set;
+//    int zero_count = 0;
+//    for(int y = 0; y < nums.size(); y++) {
+//        if(nums[y] == 0) {
+//            zero_count++;
+//        }
+//        else
+//            set.insert(nums[y]);
+//    }
+//    for(int i = 0; i < zero_count; i++) {
+//        nums.push_back(0);
+//    }
+//    for (int j = 0; j < nums.size(); j++) {
+//        std::cout << set[j];
+//    }
 }
