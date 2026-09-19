@@ -25,14 +25,15 @@
 #include <set>
 
 int main () {
-    std::vector <int> nums = {0,0,0,7,9,9,7};
+    std::vector <int> nums = {1,2,3,3 ,4,5,6};
     
     for (int i = 0; i< nums.size(); i++) {
-        if (nums[i] == 0) {
+        if (nums[i] == 3) {
             nums.push_back(nums[i]);
             nums.erase(nums.begin()+i);
         }
     }
+    std::cout << "\n";
     
     for (int y = 0; y < nums.size(); y++) {
         std::cout <<nums[y];
