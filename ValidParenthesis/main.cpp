@@ -18,7 +18,7 @@
 #include <iostream>
 //(])[
 int main() {
-    std::string input = "{([]})";
+    std::string input = "{([])}";
     std::stack<char> brackets;
     bool validparenthesis = true;
     int i = 0;
