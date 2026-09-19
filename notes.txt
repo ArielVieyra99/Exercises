@@ -1,0 +1,11 @@
+If you want to preserve your erase/push approach, you need a boundary that shrinks whenever a 3 is moved:
+for (std::size_t i = 0, end = nums.size(); i < end;) {
+    if (nums[i] == 3) {
+        int value = nums[i];
+        nums.erase(nums.begin() + i);
+        nums.push_back(value);
+        --end;
+    } else {
+        ++i;
+    }
+}
