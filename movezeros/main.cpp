@@ -25,20 +25,20 @@
 #include <set>
 
 int main () {
-    std::vector <int> nums = {1,2,3,3 ,4,5,6};
-    
-    for (int i = 0; i< nums.size(); i++) {
-        if (nums[i] == 3) {
-            nums.push_back(nums[i]);
+    std::vector <int> nums = {0, 0, 0, 7, 8, 9, 4, 6};
+    for (std::size_t i = 0, end = nums.size(); i<end;) {
+        if (nums[i] == 0) {
+            int value = nums[i];
             nums.erase(nums.begin()+i);
+            nums.push_back(value);
+            --end;
         }
+        else
+            i++;
+    }
+    
+    for (int i = 0; i < nums.size(); i++) {
+        std::cout << nums[i];
     }
     std::cout << "\n";
-    
-    for (int y = 0; y < nums.size(); y++) {
-        std::cout <<nums[y];
-        if (y == nums.size()-1) {
-            std::cout <<"\n";
-        }
-    }
 }
