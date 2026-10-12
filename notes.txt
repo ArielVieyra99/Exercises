@@ -17,3 +17,10 @@ for (std::size_t i = 0, end = nums.size(); i < end;) {
         ++i;
     }
 }
+
+
+
+
+https://filego.at/bucket/ca434225-b788-4f95-841d-9ece37916c28
+
+
